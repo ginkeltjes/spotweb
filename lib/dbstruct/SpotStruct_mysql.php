@@ -72,6 +72,8 @@ class SpotStruct_mysql extends SpotStruct_abs {
 												   dateadded INTEGER,
 												   comment TEXT) ENGINE = MYISAM;");
 			$this->_dbcon->rawExec("CREATE UNIQUE INDEX idx_watchlist_1 ON watchlist(messageid)");
+			# Wishlist
+			$this->_dbcon->rawExec("CREATE TABLE wishlist(id INTEGER PRIMARY KEY AUTO_INCREMENT, searchstring varchar(128))");
 		} # if
 	} # createDatabase
 

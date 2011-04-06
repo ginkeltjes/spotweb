@@ -71,6 +71,8 @@ class SpotStruct_sqlite extends SpotStruct_abs {
 												   dateadded INTEGER,
 												   comment TEXT);");
 			$this->_dbcon->rawExec("CREATE UNIQUE INDEX idx_watchlist_1 ON watchlist(messageid)");
+			# Wishlist
+			$this->_dbcon->rawExec("CREATE TABLE wishlist(id INTEGER PRIMARY KEY AUTO_INCREMENT, searchstring varchar(128))");
 		} # if
 	} # createDatabase
 	

@@ -40,6 +40,8 @@ abstract class SpotStruct_abs {
 			$this->_dbcon->rawExec("UPDATE spots SET reversestamp = (stamp*-1)");
 		} # if
 		$this->addIndex("idx_spots_6", "", "spots", "reversestamp");
+		# Wishlist
+		$this->_dbcon->rawExec("CREATE TABLE wishlist(id INTEGER PRIMARY KEY AUTO_INCREMENT, searchstring varchar(128))");
 	} # updateSchema
 	
 } # class
